@@ -1,0 +1,9 @@
+[Unit]
+Description=Redborder postgresql
+
+[Service]
+ExecStart=/usr/lib/redborder/bin/rb_nginx_start.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
