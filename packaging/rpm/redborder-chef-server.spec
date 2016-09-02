@@ -26,7 +26,6 @@ install -D -m 0755 resources/bin/rb_postgresql_start.sh %{buildroot}/usr/lib/red
 install -D -m 0755 resources/bin/rb_nginx_start.sh %{buildroot}/usr/lib/redborder/bin/rb_nginx_start.sh
 install -D -m 0644 resources/systemd/postgresql.service %{buildroot}/usr/lib/systemd/system/postgresql.service
 install -D -m 0644 resources/systemd/nginx.service %{buildroot}/usr/lib/systemd/system/nginx.service
-ln -s /usr/lib/systemd/system/private_chef-runsvdir-start.service /usr/lib/systemd/system/chef-server.service
 
 %files
 %defattr(0755,root,root)
@@ -39,10 +38,14 @@ ln -s /usr/lib/systemd/system/private_chef-runsvdir-start.service /usr/lib/syste
 /usr/lib/systemd/system/nginx.service
 
 %post
+ln -s /usr/lib/systemd/system/private_chef-runsvdir-start.service /usr/lib/systemd/system/chef-server.service
 %systemd_post postgresql.service
 %systemd_post nginx.service
 %systemd_post chef-server.service
 
 %changelog
+* Fri Sep 02 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-2
+- Added link to private_chef-runsvdir-start
+
 * Fri Sep 02 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-1
 - first spec version
