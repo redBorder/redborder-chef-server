@@ -33,6 +33,7 @@ install -D -m 0755 resources/bin/rb_opscode-expander_start.sh %{buildroot}/usr/l
 install -D -m 0755 resources/bin/rb_opscode-solr4_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opscode-solr4_start.sh
 install -D -m 0755 resources/bin/rb_rabbitmq_start.sh %{buildroot}/usr/lib/redborder/bin/rb_rabbitmq_start.sh
 install -D -m 0755 resources/bin/rb_redis_lb_start.sh %{buildroot}/usr/lib/redborder/bin/rb_redis_lb_start.sh
+install -D -m 0755 resources/bin/rb_chef-server_start.sh %{buildroot}/usr/lib/redborder/bin/rb_chef-server_start.sh
 install -D -m 0644 resources/systemd/postgresql.service %{buildroot}/usr/lib/systemd/system/postgresql.service
 install -D -m 0644 resources/systemd/nginx.service %{buildroot}/usr/lib/systemd/system/nginx.service
 install -D -m 0644 resources/systemd/bookshelf.service %{buildroot}/usr/lib/systemd/system/bookshelf.service
@@ -43,6 +44,7 @@ install -D -m 0644 resources/systemd/opscode-erchef.service %{buildroot}/usr/lib
 install -D -m 0644 resources/systemd/opscode-expander.service %{buildroot}/usr/lib/systemd/system/opscode-expander.service
 install -D -m 0644 resources/systemd/opscode-solr4.service %{buildroot}/usr/lib/systemd/system/opscode-solr4.service
 install -D -m 0644 resources/systemd/rabbitmq.service %{buildroot}/usr/lib/systemd/system/rabbitmq.service
+install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/systemd/system/redis_lb.service
 
 %files
 %defattr(0755,root,root)
