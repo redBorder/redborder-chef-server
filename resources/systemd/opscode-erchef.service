@@ -2,7 +2,7 @@
 Description=Redborder opscode-erchef
 
 [Service]
-ExecStart=/usr/lib/redborder/bin/rb_opscode_erchef_start.sh
+ExecStart=/usr/lib/redborder/bin/rb_opscode-erchef_start.sh
 Restart=always
 
 [Install]
