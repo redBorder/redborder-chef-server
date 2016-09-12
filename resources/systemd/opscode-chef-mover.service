@@ -1,0 +1,10 @@
+[Unit]
+Description=Redborder opscode-chef-mover
+
+[Service]
+ExecStart=/usr/lib/redborder/bin/rb_opscode-chef-mover_start.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

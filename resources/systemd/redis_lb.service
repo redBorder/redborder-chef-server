@@ -1,0 +1,10 @@
+[Unit]
+Description=Redborder redis_lb
+
+[Service]
+ExecStart=/usr/lib/redborder/bin/rb_redis_lb_start.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

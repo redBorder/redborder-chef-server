@@ -1,0 +1,10 @@
+[Unit]
+Description=Redborder bookshelf
+
+[Service]
+ExecStart=/usr/lib/redborder/bin/rb_bookshelf_start.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
