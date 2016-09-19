@@ -23,6 +23,8 @@ echo "1000000" > /proc/sys/fs/file-max
 
 umask 022
 
+/opt/opscode/bin/wait-for-rabbit
+
 exec env - PATH=$PATH \
-runsv /opt/opscode/sv/opscode-erchef
+chpst -P -u opscode -U opscode env ERL_EPMD_ADDRESS=127.0.0.1 HOME=/var/opt/opscode/opscode-erchef  /opt/opscode/embedded/service/opscode-erchef/bin/oc_erchef foreground
 

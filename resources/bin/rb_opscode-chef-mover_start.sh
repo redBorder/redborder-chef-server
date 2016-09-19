@@ -4,6 +4,8 @@ PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/
 
 umask 022
 
+ulimit -n 32768
+
 exec env - PATH=$PATH \
-runsv /opt/opscode/sv/opscode-chef-mover
+chpst -P -u opscode -U opscode env ERL_EPMD_ADDRESS=127.0.0.1 HOME=/var/opt/opscode/opscode-chef-mover /opt/opscode/embedded/service/opscode-chef-mover/bin/mover foreground
 

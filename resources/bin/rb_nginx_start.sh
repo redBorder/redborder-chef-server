@@ -24,4 +24,4 @@ echo "1000000" > /proc/sys/fs/file-max
 umask 022
 
 exec env - PATH=$PATH \
-runsv /opt/opscode/sv/nginx
+chpst -P /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf

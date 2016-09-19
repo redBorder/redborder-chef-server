@@ -24,4 +24,4 @@ echo "1000000" > /proc/sys/fs/file-max
 umask 022
 
 exec env - PATH=$PATH \
-runsv /opt/opscode/sv/postgresql
+chpst -P -U opscode-pgsql -u opscode-pgsql /opt/opscode/embedded/bin/postgres -D /var/opt/opscode/postgresql/9.2/data

@@ -126,6 +126,9 @@ install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/syste
 %systemd_post redis_lb.service
 
 %changelog
+* Mon Sep 19 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-4
+- Replace runit to systemd
+
 * Mon Sep 12 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-3
 - Fix typo on opscode-erchef unit file
 
