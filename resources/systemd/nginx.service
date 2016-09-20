@@ -1,5 +1,5 @@
 [Unit]
-Description=Redborder postgresql
+Description=Redborder nginx
 
 [Service]
 ExecStart=/usr/lib/redborder/bin/rb_nginx_start.sh

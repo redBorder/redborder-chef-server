@@ -126,6 +126,9 @@ install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/syste
 %systemd_post redis_lb.service
 
 %changelog
+* Tue Sep 20 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-6
+- Fix typo on nginx unit file
+
 * Tue Sep 20 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-5
 - Add user to unit file instead init script 
 
