@@ -4,6 +4,7 @@ Description=Redborder opscode-solr4
 [Service]
 ExecStart=/usr/lib/redborder/bin/rb_opscode-solr4_start.sh
 Restart=always
+User=opscode
 
 [Install]
 WantedBy=multi-user.target

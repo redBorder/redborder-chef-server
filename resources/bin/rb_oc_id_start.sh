@@ -13,5 +13,5 @@ export HOME=$DIR
 cd $DIR
 
 exec env - PATH=$PATH \
-chpst -P -u opscode -U opscode /opt/opscode/embedded/bin/bundle exec rails server -p 9090 -b 127.0.0.1
+/opt/opscode/embedded/bin/bundle exec rails server -p 9090 -b 127.0.0.1
 

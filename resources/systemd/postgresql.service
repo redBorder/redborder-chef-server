@@ -4,6 +4,7 @@ Description=Redborder postgresql
 [Service]
 ExecStart=/usr/lib/redborder/bin/rb_postgresql_start.sh
 Restart=always
+User=opscode
 
 [Install]
 WantedBy=multi-user.target
