@@ -126,6 +126,9 @@ install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/syste
 %systemd_post redis_lb.service
 
 %changelog
+* Wed Sep 21 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-9
+- Fix wrong variable definition on oc_id init scipt
+
 * Wed Sep 21 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-8
 - Run postgresql init script with opscode-pgsql instead opscode user
 
