@@ -126,6 +126,9 @@ install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/syste
 %systemd_post redis_lb.service
 
 %changelog
+* Wed Sep 21 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-7
+- Run nginx init script with root instead opscode user
+
 * Tue Sep 20 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-6
 - Fix typo on nginx unit file
 
