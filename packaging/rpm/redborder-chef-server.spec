@@ -126,6 +126,9 @@ install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/syste
 %systemd_post redis_lb.service
 
 %changelog
+* Wed Sep 23 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-11
+- Add opscode path to rabbitmq init script
+
 * Wed Sep 22 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-10
 - Fix init scripts call
 
