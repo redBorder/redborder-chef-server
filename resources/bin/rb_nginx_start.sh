@@ -21,7 +21,5 @@ ulimit -v unlimited
 ulimit -x unlimited
 echo "1000000" > /proc/sys/fs/file-max
 
-umask 022
 
-exec env - PATH=$PATH \
-/opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf
+exec /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf
