@@ -1,5 +1,9 @@
 #!/bin/bash
 
+PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+
+umask 022
+
 DIR=/opt/opscode/embedded/service/oc_id
 export RAILS_ENV=production
 export PATH=/opt/opscode/embedded/bin:$PATH
