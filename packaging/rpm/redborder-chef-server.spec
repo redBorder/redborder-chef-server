@@ -126,6 +126,9 @@ install -D -m 0644 resources/systemd/redis_lb.service %{buildroot}/usr/lib/syste
 %systemd_post redis_lb.service
 
 %changelog
+* Mon Sep 26 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-13
+- Added path to opscode-erchef aswell
+
 * Fri Sep 23 2016 Enrique Jimenez <ejimenez@redborder.com> 1.0.0-12
 - Add path to all scripts
 
