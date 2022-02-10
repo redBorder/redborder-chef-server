@@ -34,7 +34,7 @@ install -D -m 0755 resources/bin/rb_opscode-solr4_start.sh %{buildroot}/usr/lib/
 install -D -m 0755 resources/bin/rb_rabbitmq_start.sh %{buildroot}/usr/lib/redborder/bin/rb_rabbitmq_start.sh
 install -D -m 0755 resources/bin/rb_redis_lb_start.sh %{buildroot}/usr/lib/redborder/bin/rb_redis_lb_start.sh
 install -D -m 0755 resources/bin/rb_chef-server_start.sh %{buildroot}/usr/lib/redborder/bin/rb_chef-server_start.sh
-install -D -m 0644 resources/systemd/opscode-postgresql.service %{buildroot}/usr/lib/systemd/system/opscode-postgresql.service
+#install -D -m 0644 resources/systemd/opscode-postgresql.service %{buildroot}/usr/lib/systemd/system/opscode-postgresql.service
 install -D -m 0644 resources/systemd/opscode-nginx.service %{buildroot}/usr/lib/systemd/system/opscode-nginx.service
 install -D -m 0644 resources/systemd/opscode-bookshelf.service %{buildroot}/usr/lib/systemd/system/opscode-bookshelf.service
 install -D -m 0644 resources/systemd/opscode-oc_bifrost.service %{buildroot}/usr/lib/systemd/system/opscode-oc_bifrost.service
@@ -49,8 +49,8 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 %files
 %defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_postgresql_start.sh
-%defattr(0644,root,root)
-/usr/lib/systemd/system/opscode-postgresql.service
+#%defattr(0644,root,root)
+#/usr/lib/systemd/system/opscode-postgresql.service
 
 %defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_nginx_start.sh
@@ -113,7 +113,7 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 /usr/lib/redborder/bin/rb_chef-server_start.sh
 
 %post
-%systemd_post opscode-postgresql.service
+#%systemd_post opscode-postgresql.service
 %systemd_post opscode-nginx.service
 %systemd_post opscode-bookshelf.service
 %systemd_post opscode-oc_bifrost.service
