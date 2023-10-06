@@ -27,11 +27,7 @@ install -D -m 0755 resources/bin/rb_nginx_start.sh %{buildroot}/usr/lib/redborde
 install -D -m 0755 resources/bin/rb_bookshelf_start.sh %{buildroot}/usr/lib/redborder/bin/rb_bookshelf_start.sh
 install -D -m 0755 resources/bin/rb_oc_bifrost_start.sh %{buildroot}/usr/lib/redborder/bin/rb_oc_bifrost_start.sh
 install -D -m 0755 resources/bin/rb_oc_id_start.sh %{buildroot}/usr/lib/redborder/bin/rb_oc_id_start.sh
-install -D -m 0755 resources/bin/rb_opscode-chef-mover_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opscode-chef-mover_start.sh
 install -D -m 0755 resources/bin/rb_opscode-erchef_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opscode-erchef_start.sh
-install -D -m 0755 resources/bin/rb_opscode-expander_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opscode-expander_start.sh
-install -D -m 0755 resources/bin/rb_opscode-solr4_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opscode-solr4_start.sh
-install -D -m 0755 resources/bin/rb_rabbitmq_start.sh %{buildroot}/usr/lib/redborder/bin/rb_rabbitmq_start.sh
 install -D -m 0755 resources/bin/rb_redis_lb_start.sh %{buildroot}/usr/lib/redborder/bin/rb_redis_lb_start.sh
 install -D -m 0755 resources/bin/rb_chef-server_start.sh %{buildroot}/usr/lib/redborder/bin/rb_chef-server_start.sh
 install -D -m 0644 resources/systemd/opscode-postgresql.service %{buildroot}/usr/lib/systemd/system/opscode-postgresql.service
@@ -39,11 +35,7 @@ install -D -m 0644 resources/systemd/opscode-nginx.service %{buildroot}/usr/lib/
 install -D -m 0644 resources/systemd/opscode-bookshelf.service %{buildroot}/usr/lib/systemd/system/opscode-bookshelf.service
 install -D -m 0644 resources/systemd/opscode-oc_bifrost.service %{buildroot}/usr/lib/systemd/system/opscode-oc_bifrost.service
 install -D -m 0644 resources/systemd/opscode-oc_id.service %{buildroot}/usr/lib/systemd/system/opscode-oc_id.service
-install -D -m 0644 resources/systemd/opscode-chef-mover.service %{buildroot}/usr/lib/systemd/system/opscode-chef-mover.service
 install -D -m 0644 resources/systemd/opscode-erchef.service %{buildroot}/usr/lib/systemd/system/opscode-erchef.service
-install -D -m 0644 resources/systemd/opscode-expander.service %{buildroot}/usr/lib/systemd/system/opscode-expander.service
-install -D -m 0644 resources/systemd/opscode-solr4.service %{buildroot}/usr/lib/systemd/system/opscode-solr4.service
-install -D -m 0644 resources/systemd/opscode-rabbitmq.service %{buildroot}/usr/lib/systemd/system/opscode-rabbitmq.service
 install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/lib/systemd/system/opscode-redis_lb.service
 
 %files
@@ -74,35 +66,10 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 %defattr(0644,root,root)
 /usr/lib/systemd/system/opscode-oc_id.service
 
-
-%defattr(0755,root,root)
-/usr/lib/redborder/bin/rb_opscode-chef-mover_start.sh
-%defattr(0644,root,root)
-/usr/lib/systemd/system/opscode-chef-mover.service
-
-
 %defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_opscode-erchef_start.sh
 %defattr(0644,root,root)
 /usr/lib/systemd/system/opscode-erchef.service
-
-
-%defattr(0755,root,root)
-/usr/lib/redborder/bin/rb_opscode-expander_start.sh
-%defattr(0644,root,root)
-/usr/lib/systemd/system/opscode-expander.service
-
-
-%defattr(0755,root,root)
-/usr/lib/redborder/bin/rb_opscode-solr4_start.sh
-%defattr(0644,root,root)
-/usr/lib/systemd/system/opscode-solr4.service
-
-
-%defattr(0755,root,root)
-/usr/lib/redborder/bin/rb_rabbitmq_start.sh
-%defattr(0644,root,root)
-/usr/lib/systemd/system/opscode-rabbitmq.service
 
 %defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_redis_lb_start.sh
@@ -118,11 +85,7 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 %systemd_post opscode-bookshelf.service
 %systemd_post opscode-oc_bifrost.service
 %systemd_post opscode-oc_id.service
-%systemd_post opscode-chef-mover.service
 %systemd_post opscode-erchef.service
-%systemd_post opscode-expander.service
-%systemd_post opscode-solr4.service
-%systemd_post opscode-rabbitmq.service
 %systemd_post opscode-redis_lb.service
 
 %changelog
