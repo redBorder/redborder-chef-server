@@ -1,6 +1,6 @@
 #!/bin/bash
-
-PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+exec 2>&1
+export PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
 
 ulimit -c 0
 ulimit -d unlimited
@@ -21,5 +21,7 @@ ulimit -v unlimited
 ulimit -x unlimited
 echo "1000000" > /proc/sys/fs/file-max
 
-
-exec /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf
+exec /opt/opscode/embedded/bin/veil-env-helper -f /etc/opscode/private-chef-secrets.json -o DATA_COLLECTOR_TOKEN=data_collector.token -s REDIS_PASSWORD=redis_lb.password -- \
+  chpst \
+  -P env TZ=UTC  \
+  /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf

@@ -37,6 +37,7 @@ install -D -m 0644 resources/systemd/opscode-oc_bifrost.service %{buildroot}/usr
 install -D -m 0644 resources/systemd/opscode-oc_id.service %{buildroot}/usr/lib/systemd/system/opscode-oc_id.service
 install -D -m 0644 resources/systemd/opscode-erchef.service %{buildroot}/usr/lib/systemd/system/opscode-erchef.service
 install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/lib/systemd/system/opscode-redis_lb.service
+install -D -m 0644 resources/systemd/opscode-opensearch.service %{buildroot}/usr/lib/systemd/system/opscode-opensearch.service
 
 %files
 %defattr(0755,root,root)
@@ -54,12 +55,10 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 %defattr(0644,root,root)
 /usr/lib/systemd/system/opscode-bookshelf.service
 
-
 %defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_oc_bifrost_start.sh
 %defattr(0644,root,root)
 /usr/lib/systemd/system/opscode-oc_bifrost.service
-
 
 %defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_oc_id_start.sh
@@ -77,6 +76,11 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 /usr/lib/systemd/system/opscode-redis_lb.service
 
 %defattr(0755,root,root)
+/usr/lib/redborder/bin/rb_opensearch_start.sh
+%defattr(0644,root,root)
+/usr/lib/systemd/system/opscode-opensearch.service
+
+%defattr(0755,root,root)
 /usr/lib/redborder/bin/rb_chef-server_start.sh
 
 %post
@@ -87,8 +91,12 @@ install -D -m 0644 resources/systemd/opscode-redis_lb.service %{buildroot}/usr/l
 %systemd_post opscode-oc_id.service
 %systemd_post opscode-erchef.service
 %systemd_post opscode-redis_lb.service
+%systemd_post opscode-opensearch.service
 
 %changelog
+* Fri Oct 13 2023 Miguel Negrón <manegron@redborder.com>
+- Update chef 15
+
 * Fri Nov 04 2016 Carlos J. Mateos <cjmateos@redborder.com> 1.0.0-14
 - Rename chef-server unit files
 
