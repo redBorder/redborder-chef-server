@@ -4,4 +4,4 @@ PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/
 
 umask 022
 
-exec env ERL_EPMD_ADDRESS=0.0.0.0 HOME=/opt/opscode/embedded/bookshelf /opt/opscode/embedded/service/bookshelf/bin/bookshelf foreground
+exec env ERL_EPMD_ADDRESS=0.0.0.0 HOME=/opt/opscode/embedded/service/bookshelf /opt/opscode/embedded/service/bookshelf/bin/bookshelf foreground

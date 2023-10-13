@@ -22,4 +22,4 @@ ulimit -x unlimited
 echo "1000000" > /proc/sys/fs/file-max
 
 
-exec /opt/opscode/embedded/sbin/nginx -c /opt/opscode/embedded/nginx/etc/nginx.conf
+exec /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf
