@@ -23,5 +23,5 @@ echo "1000000" > /proc/sys/fs/file-max
 
 exec /opt/opscode/embedded/bin/veil-env-helper -f /etc/opscode/private-chef-secrets.json -o DATA_COLLECTOR_TOKEN=data_collector.token -s REDIS_PASSWORD=redis_lb.password -- \
   chpst \
-  -P env TZ=UTC  \
+  -P env TZ=UTC GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0/gems GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0/gems \
   /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf
