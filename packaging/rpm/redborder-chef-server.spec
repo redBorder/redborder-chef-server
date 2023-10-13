@@ -29,6 +29,7 @@ install -D -m 0755 resources/bin/rb_oc_bifrost_start.sh %{buildroot}/usr/lib/red
 install -D -m 0755 resources/bin/rb_oc_id_start.sh %{buildroot}/usr/lib/redborder/bin/rb_oc_id_start.sh
 install -D -m 0755 resources/bin/rb_opscode-erchef_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opscode-erchef_start.sh
 install -D -m 0755 resources/bin/rb_redis_lb_start.sh %{buildroot}/usr/lib/redborder/bin/rb_redis_lb_start.sh
+install -D -m 0755 resources/bin/rb_opensearch_start.sh %{buildroot}/usr/lib/redborder/bin/rb_opensearch_start.sh
 install -D -m 0755 resources/bin/rb_chef-server_start.sh %{buildroot}/usr/lib/redborder/bin/rb_chef-server_start.sh
 install -D -m 0644 resources/systemd/opscode-postgresql.service %{buildroot}/usr/lib/systemd/system/opscode-postgresql.service
 install -D -m 0644 resources/systemd/opscode-nginx.service %{buildroot}/usr/lib/systemd/system/opscode-nginx.service
