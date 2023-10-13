@@ -21,7 +21,10 @@ ulimit -v unlimited
 ulimit -x unlimited
 echo "1000000" > /proc/sys/fs/file-max
 
+export GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0
+export GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0 
+
 exec /opt/opscode/embedded/bin/veil-env-helper -f /etc/opscode/private-chef-secrets.json -o DATA_COLLECTOR_TOKEN=data_collector.token -s REDIS_PASSWORD=redis_lb.password -- \
   chpst \
-  -P env TZ=UTC GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0/gems GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0/gems \
+  -P env TZ=UTC \
   /opt/opscode/embedded/sbin/nginx -c /var/opt/opscode/nginx/etc/nginx.conf

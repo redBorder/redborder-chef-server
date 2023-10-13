@@ -5,4 +5,7 @@ export PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local
 
 umask 022
 
-exec veil-env-helper --use-file -f /etc/opscode/private-chef-secrets.json -s oc_bifrost.sql_password -s oc_bifrost.superuser_id -- chpst -P -u opscode -U opscode env ERL_EPMD_ADDRESS=0.0.0.0 HOME=/var/opt/opscode/oc_bifrost GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0/gems GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0/gems /opt/opscode/embedded/service/oc_bifrost/bin/oc_bifrost foreground
+export GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0
+export GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0 
+
+exec veil-env-helper --use-file -f /etc/opscode/private-chef-secrets.json -s oc_bifrost.sql_password -s oc_bifrost.superuser_id -- chpst -P -u opscode -U opscode env ERL_EPMD_ADDRESS=0.0.0.0 HOME=/var/opt/opscode/oc_bifrost /opt/opscode/embedded/service/oc_bifrost/bin/oc_bifrost foreground
