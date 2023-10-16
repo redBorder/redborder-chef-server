@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 exec 2>&1
 
 ulimit -n 65536
@@ -13,8 +13,9 @@ export PATH=/opt/opscode/embedded/bin:$JAVA_HOME/bin:$ES_HOME:$PATH #/opt/opscod
 export TMPDIR=/var/opt/opscode/opensearch/tmp
 export ES_TMPDIR=/var/opt/opscode/opensearch/tmp
 
-export GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0 
-export GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0 
+export GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0
+export GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0
 
 cd $ES_HOME
-exec chpst -P -u opscode -U opscode /opt/opscode/embedded/opensearch/bin/opensearch
+
+/opt/opscode/embedded/opensearch/bin/opensearch

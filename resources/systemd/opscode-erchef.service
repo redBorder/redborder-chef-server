@@ -5,6 +5,7 @@ Description=Redborder opscode-erchef
 ExecStart=/usr/lib/redborder/bin/rb_opscode-erchef_start.sh
 Restart=always
 User=opscode
+Group=opscode
 
 [Install]
 WantedBy=multi-user.target

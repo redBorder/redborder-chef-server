@@ -5,6 +5,7 @@ Description=Redborder bookshelf
 ExecStart=/usr/lib/redborder/bin/rb_bookshelf_start.sh
 Restart=always
 User=opscode
+Group=opscode
 
 [Install]
 WantedBy=multi-user.target

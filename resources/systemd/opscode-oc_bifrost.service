@@ -5,6 +5,7 @@ Description=Redborder oc_bifrost
 ExecStart=/usr/lib/redborder/bin/rb_oc_bifrost_start.sh
 Restart=always
 User=opscode
+Group=opscode
 
 [Install]
 WantedBy=multi-user.target
