@@ -1,3 +1,3 @@
 #!/bin/bash
-
-exec /opt/opscode/embedded/bin/postgres -D /var/opt/opscode/postgresql/9.2/data
+exec 2>&1
+exec /opt/opscode/embedded/bin/postgres -D /var/opt/opscode/postgresql/13/data

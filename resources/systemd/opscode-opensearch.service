@@ -1,8 +1,8 @@
 [Unit]
-Description=Redborder oc_bifrost
+Description=Redborder opensearch
 
 [Service]
-ExecStart=/usr/lib/redborder/bin/rb_oc_bifrost_start.sh
+ExecStart=/usr/lib/redborder/bin/rb_opensearch_start.sh
 Restart=always
 User=opscode
 Group=opscode

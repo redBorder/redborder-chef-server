@@ -5,6 +5,8 @@ Description=Redborder redis_lb
 ExecStart=/usr/lib/redborder/bin/rb_redis_lb_start.sh
 Restart=always
 User=opscode
+Group=opscode
+LimitNOFILE=100000
 
 [Install]
 WantedBy=multi-user.target

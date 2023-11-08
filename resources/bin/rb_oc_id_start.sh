@@ -1,14 +1,18 @@
 #!/bin/bash
-
-PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+exec 2>&1
 
 umask 022
 
 DIR=/opt/opscode/embedded/service/oc_id
 export RAILS_ENV=production
-export PATH=/opt/opscode/embedded/bin:$PATH
+PATH=/opt/opscode/bin:/opt/opscode/embedded/bin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
 export LD_LIBRARY_PATH=/opt/opscode/embedded/lib
 export HOME=$DIR
 
+export GEM_PATH=/opt/opscode/embedded/service/gem/ruby/2.7.0
+export GEM_HOME=/opt/opscode/embedded/service/gem/ruby/2.7.0
+
+rm -f $DIR/tmp/pids/server.pid
 cd $DIR
-exec /opt/opscode/embedded/bin/bundle exec rails server -p 9090 -b 127.0.0.1
+
+exec veil-env-helper -f /etc/opscode/private-chef-secrets.json --use-file -s chef-server.webui_key -s oc_id.sql_password -s oc_id.secret_key_base -- /opt/opscode/embedded/bin/bundle exec bin/rails server -p 9090 -b 127.0.0.1
